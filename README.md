@@ -1,22 +1,25 @@
-pyLAPJV
-
-
 This Python module is just a simple wrapper for the C++ code written by Jonker to implement the Jonker-Volgenant algorithm, LAPJV, for the linear assignment problem.
 
-See the important notes below to properly use this algorithm. For a more tolerant, but slower, LAP algorithm see http://mit.edu/harold/www/code.html#hungarian
+**It has not been updated since 2008, so may need some changes &mdash; pull requests are welcome!**
 
-Note that this module depends on the numpy module. You must install numpy before you can compile this module. Numpy can be downloaded from http://numpy.sf.net
+See the important notes below to properly use this algorithm. For a more tolerant, but slower, LAP algorithm see http://github.com/hrldcpr/hungarian
 
-If you have any problems with this module, you should email me (hbc@mit.edu), not Dr. Jonker.
+Note that this module depends on the numpy module. You must install numpy before you can compile this module. Numpy can be downloaded from http://numpy.scipy.org
+
+If you have any problems with this module, you should contact me, not Dr. Jonker.
 
 
 To build this module run:
-> python setup.py build
+
+    > python setup.py build
+
 Then you can either put the file build/lib-<YOUR-PLATFORM>/LAPJV.so in the same directory as the code that will be using it, or you can install it so that all of your python programs can see it:
-> python setup.py install
+
+    > python setup.py install
 
 For the module's documentation, type at a Python prompt:
->>> help('LAPJV')
+
+    >>> help('LAPJV')
 
 For a usage example, courtesy of Dr. N.D. van Foreest, see example.py
 
@@ -36,8 +39,8 @@ NOTA BENE:
 	There is no variable tolerance inherent to Jonker's code, so the solution is to scale all of the costs by some factor, which of course will not change the optimal assignment. For example, both of the matrices below no longer fail under single-precision if multiplied by 10. Under double-precision, however, it seems harder to fix.
 UPDATE: see Nota Melior below.
 	Here are two offending matrices, for single and double precision:
-	http://mit.edu/harold/Public/pyLAPJV-float-fail.txt
-	http://mit.edu/harold/Public/pyLAPJV-double-fail.txt
+	http://syzygy.st/Public/pyLAPJV-float-fail.txt
+	http://syzygy.st/Public/pyLAPJV-double-fail.txt
 
 NOTA MELIOR:
 	Tom Marthaler may have solved the preceding problem, although I've yet to try it, but it sounds good. His email says:
