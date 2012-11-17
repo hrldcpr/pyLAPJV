@@ -15,6 +15,7 @@ LAPJV_lap(PyObject *self, PyObject *args)
 	col *rowsol;
 	row *colsol;
 	cost lapcost,*buf,**ccosts,*u,*v;
+        npy_intp *strides;
 
     if (!PyArg_ParseTuple(args, "O", &ocosts))
         return NULL;
@@ -39,7 +40,7 @@ LAPJV_lap(PyObject *self, PyObject *args)
     buf = (cost*)PyArray_DATA(costs);
 	
 	//copy inputted matrix into a 2-dimensional C array:
-    npy_intp *strides = PyArray_STRIDES(costs);
+    strides = PyArray_STRIDES(costs);
     assert(strides[1] == sizeof(cost));
     ccosts = (cost **)malloc(sizeof(cost *)*n);
 	if(!ccosts)
