@@ -1,14 +1,14 @@
 def configuration(parent_package='', top_path=None):
     from numpy.distutils.misc_util import Configuration
     config = Configuration('', parent_package,top_path)
-    config.add_extension('LAPJV', ['pyLAPJV.cpp','lap.cpp'])
+    config.add_extension('LAPJV', ['pyLAPJV.cpp', 'lap.cpp', 'lap.h'])
     return config
 
 if __name__ == "__main__":
     from numpy.distutils.core import setup
     setup(configuration=configuration,
           name='pyLAPJV',
-          version='0.3.1',
+          version='0.3.2',
           url='http://github.com/hrldcpr/pyLAPJV',
           description='efficient algorithm for the linear assignment problem',
           long_description=
