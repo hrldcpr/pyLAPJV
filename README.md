@@ -36,6 +36,9 @@ According to that paper, it is notably faster than the Hungarian algorithm (a.k.
 The C++ source comes from:
 http://www.magiclogic.com/assignment.html
 
+If any of those links are broken then try them in the Wayback Machine! For example the original C++ source zip can be obtained at:
+https://web.archive.org/web/*/http://www.magiclogic.com/assignment/lap_cpp.zip
+
 This wrapper for the algorithm uses single precision (i.e. 32-bit) floating point arithmetic. To change it to double precision, integer, or anything else, simply change the corresponding types in lap.h
 
 Nota Bene
