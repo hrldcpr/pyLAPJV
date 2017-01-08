@@ -34,7 +34,9 @@ LAPJV_lap(PyObject *self, PyObject *args)
       PyErr_SetString(PyExc_ValueError,"lap() requires a square matrix");
       goto error;
     }
-
+  npy_intp ret_dims[2];
+  ret_dims[0] = n;
+  ret_dims[1] = 0;
   //get inputted matrix as a 1-D C array:
   //buf = (cost *)NA_OFFSETDATA(costs);
   buf = (cost*)PyArray_DATA(costs);
@@ -68,10 +70,10 @@ LAPJV_lap(PyObject *self, PyObject *args)
   Py_XDECREF(costs);
 
   return Py_BuildValue("(dOOOO)",lapcost,
-                       PyArray_SimpleNewFromData(1,(npy_intp*)&n,COL_TYPE,rowsol),
-                       PyArray_SimpleNewFromData(1,(npy_intp*)&n,ROW_TYPE,colsol),
-                       PyArray_SimpleNewFromData(1,(npy_intp*)&n,COST_TYPE,u),
-                       PyArray_SimpleNewFromData(1,(npy_intp*)&n,COST_TYPE,v)
+                       PyArray_SimpleNewFromData(1,ret_dims,COL_TYPE,rowsol),
+                       PyArray_SimpleNewFromData(1,ret_dims,ROW_TYPE,colsol),
+                       PyArray_SimpleNewFromData(1,ret_dims,COST_TYPE,u),
+                       PyArray_SimpleNewFromData(1,ret_dims,COST_TYPE,v)
                        );
 
  error:
