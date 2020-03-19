@@ -1,6 +1,11 @@
-This Python module is just a simple wrapper for the C++ code written by Jonker to implement the Jonker-Volgenant algorithm, LAPJV, for the linear assignment problem.
+**This is an outdated package**
 
-**It has not been updated since 2008, so may need some changes &mdash; pull requests are welcome!**
+Consider using [scipy.optimize.linear_sum_assignment](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html) instead.
+
+
+## Previous documentation
+
+This Python module is just a simple wrapper for the C++ code written by Jonker to implement the Jonker-Volgenant algorithm, LAPJV, for the linear assignment problem.
 
 See the important notes below to properly use this algorithm. For a more tolerant, but slower, LAP algorithm see http://github.com/hrldcpr/hungarian
 
