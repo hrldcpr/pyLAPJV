@@ -53,8 +53,8 @@ The following matrices, and others, cause Jonker's code to loop forever. Accordi
 There is no variable tolerance inherent to Jonker's code, so the solution is to scale all of the costs by some factor, which of course will not change the optimal assignment. For example, both of the matrices below no longer fail under single-precision if multiplied by 10. Under double-precision, however, it seems harder to fix.
 
 Here are two offending matrices, for single and double precision:
-* http://syzygy.st/Public/pyLAPJV-float-fail.txt
-* http://syzygy.st/Public/pyLAPJV-double-fail.txt
+* https://polyhedron.party/Public/pyLAPJV-float-fail.txt
+* https://polyhedron.party/Public/pyLAPJV-double-fail.txt
 
 Nota Melior
 -----------
