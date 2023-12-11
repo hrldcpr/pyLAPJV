@@ -39,7 +39,7 @@ R. Jonker and A. Volgenant, "A Shortest Augmenting Path Algorithm for Dense and 
 According to that paper, it is notably faster than the Hungarian algorithm (a.k.a. Munkres' algorithm) and several other linear assignment algorithms.
 
 The C++ source comes from:
-http://www.magiclogic.com/assignment.html
+https://web.archive.org/web/*/http://www.magiclogic.com/assignment.html
 
 If any of those links are broken then try them in the Wayback Machine! For example the original C++ source zip can be obtained at:
 https://web.archive.org/web/*/http://www.magiclogic.com/assignment/lap_cpp.zip
